@@ -1,5 +1,5 @@
 {
-  "name": "vform",
+  "name": "@unisharp/vform",
   "version": "0.8.2",
   "description": "A simple way to handle Laravel back-end validation in Vue.",
   "main": "dist/vform.js",
@@ -10,19 +10,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cretueusebiu/vform.git"
+    "url": "git+https://github.com/UniSharp/vform.git"
   },
   "keywords": [
     "vue",
     "form",
     "laravel"
   ],
-  "author": "Cretu Eusebiu",
+  "author": {
+    "name": "UniSharp Ltd.",
+    "email": "opensource@unisharp.com",
+    "url": "https://www.unisharp.com"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cretueusebiu/vform/issues"
+    "url": "https://github.com/UniSharp/vform/issues"
   },
-  "homepage": "https://github.com/cretueusebiu/vform#readme",
+  "homepage": "https://github.com/UniSharp/vform#readme",
   "peerDependencies": {
     "axios": "*"
   },
