@@ -8,11 +8,12 @@ class Form {
    *
    * @param {Object} data
    */
-  constructor (data = {}) {
+  constructor (data = {}, $axios = null) {
     this.busy = false
     this.successful = false
     this.errors = new Errors()
     this.originalData = deepCopy(data)
+    this.axios = $axios || axios
 
     Object.assign(this, data)
   }
@@ -151,7 +152,7 @@ class Form {
     }
 
     return new Promise((resolve, reject) => {
-      axios.request({ url, method, data, ...config })
+      this.axios.request({ url, method, data, ...config })
         .then(response => {
           this.finishProcessing()
 
@@ -230,6 +231,6 @@ class Form {
 
 Form.routes = {}
 Form.errorMessage = 'Something went wrong. Please try again.'
-Form.ignore = ['busy', 'successful', 'errors', 'originalData']
+Form.ignore = ['busy', 'successful', 'errors', 'originalData', 'axios']
 
 export default Form
