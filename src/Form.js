@@ -177,19 +177,25 @@ class Form {
    * @return {Object}
    */
   extractErrors (response) {
-    if (!response.data || typeof response.data !== 'object') {
+    let data = response.data
+
+    if (!data || typeof data !== 'object') {
       return { error: Form.errorMessage }
     }
 
-    if (response.data.errors) {
-      return { ...response.data.errors }
+    if (data.errors) {
+      return { ...data.errors }
     }
 
-    if (response.data.message) {
-      return { error: response.data.message }
+    if (data.message) {
+      return { error: data.message }
     }
 
-    return { ...response.data }
+    if (data.error && data.error.message) {
+      return { error: data.error.message }
+    }
+
+    return { ...data }
   }
 
   /**
