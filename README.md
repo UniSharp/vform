@@ -15,7 +15,7 @@
 ## Installation
 
 ```bash
-npm i axios vform
+npm i axios @unisharp/vform
 ```
 
 ## Usage
