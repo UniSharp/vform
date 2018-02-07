@@ -160,7 +160,6 @@ class Form {
         })
         .catch(error => {
           this.busy = false
-
           if (error.response) {
             this.errors.set(this.extractErrors(error.response))
           }
@@ -192,7 +191,7 @@ class Form {
     }
 
     if (data.error && data.error.message) {
-      return { error: data.error.message }
+      return { ...data.error.message }
     }
 
     return { ...data }
