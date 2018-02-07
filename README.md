@@ -109,6 +109,13 @@ class LoginController extends Controller
 busy
 
 /**
+ * Determine if change busy status after successful submit.
+ *
+ * @var {Boolean}
+ */
+keepBusy
+
+/**
  * Indicates if the response form the server was successful.
  *
  * @var {Boolean}
@@ -126,8 +133,9 @@ errors
  * Create a new form instance.
  *
  * @param {Object} data
+ * @param {Object} axios
  */
-constructor (data = {})
+constructor (data = {}, axios = null)
 
 /**
  * Submit the from via a POST|PATCH|PUT|DELETE|GET request.
