@@ -48,7 +48,7 @@ test('start processing the form', t => {
 test('finish processing the form', t => {
   form.finishProcessing()
 
-  t.false(form.busy)
+  t.true(form.busy)
   t.true(form.successful)
 })
 
@@ -75,7 +75,7 @@ test('submit the form successfully', async t => {
 
   await form.post('/login')
 
-  t.false(form.busy)
+  t.true(form.busy)
   t.true(form.successful)
   t.false(form.errors.any())
 })

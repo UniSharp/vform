@@ -7,6 +7,7 @@ class Form {
    * Create a new form instance.
    *
    * @param {Object} data
+   * @param {Object} axios
    */
   constructor (data = {}, $axios = null) {
     this.busy = false
@@ -14,6 +15,7 @@ class Form {
     this.errors = new Errors()
     this.originalData = deepCopy(data)
     this.axios = $axios || axios
+    this.keepBusy = true
 
     Object.assign(this, data)
   }
@@ -56,7 +58,7 @@ class Form {
    * Finish processing the form.
    */
   finishProcessing () {
-    this.busy = false
+    this.busy = this.keepBusy
     this.successful = true
   }
 
@@ -236,6 +238,6 @@ class Form {
 
 Form.routes = {}
 Form.errorMessage = 'Something went wrong. Please try again.'
-Form.ignore = ['busy', 'successful', 'errors', 'originalData', 'axios']
+Form.ignore = ['busy', 'successful', 'errors', 'originalData', 'axios', 'keepBusy']
 
 export default Form
