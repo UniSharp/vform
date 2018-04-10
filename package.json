@@ -17,11 +17,14 @@
     "form",
     "laravel"
   ],
-  "author": {
-    "name": "UniSharp Ltd.",
-    "email": "opensource@unisharp.com",
-    "url": "https://www.unisharp.com"
-  },
+  "author": "Cretu Eusebiu",
+  "contributors": [
+    {
+      "name": "UniSharp Ltd.",
+      "email": "opensource@unisharp.com",
+      "url": "https://www.unisharp.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/UniSharp/vform/issues"

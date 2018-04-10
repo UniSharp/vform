@@ -1,9 +1,9 @@
 # vform
 
 <p>
-  <a href="https://npmjs.com/package/vform"><img src="https://img.shields.io/npm/v/vform.svg?style=flat-square" alt="Latest Version on NPM"></a>
-  <a href="https://travis-ci.org/cretueusebiu/vform"><img src="https://travis-ci.org/cretueusebiu/vform.svg?branch=master" alt="Build Status"></a>
-  <a href="https://npmjs.com/package/vform"><img src="https://img.shields.io/npm/dt/vform.svg?style=flat-square" alt="Total Downloads"></a>
+  <a href="https://npmjs.com/package/@unisharp/vform"><img src="https://img.shields.io/npm/v/@unisharp/vform.svg?style=flat-square" alt="Latest Version on NPM"></a>
+  <a href="https://travis-ci.org/unisharp/vform"><img src="https://travis-ci.org/unisharp/vform.svg?branch=master" alt="Build Status"></a>
+  <a href="https://npmjs.com/package/@unisharp/vform"><img src="https://img.shields.io/npm/dt/@unisharp/vform.svg?style=flat-square" alt="Total Downloads"></a>
 </p>
 
 >A simple way to handle Laravel back-end validation in Vue. Inspired from <a href="https://spark.laravel.com">Laravel Spark</a>.
@@ -15,7 +15,7 @@
 ## Installation
 
 ```bash
-npm i axios vform
+npm i axios @unisharp/vform
 ```
 
 ## Usage
@@ -109,6 +109,13 @@ class LoginController extends Controller
 busy
 
 /**
+ * Determine if change busy status after successful submit.
+ *
+ * @var {Boolean}
+ */
+keepBusy
+
+/**
  * Indicates if the response form the server was successful.
  *
  * @var {Boolean}
@@ -126,8 +133,9 @@ errors
  * Create a new form instance.
  *
  * @param {Object} data
+ * @param {Object} axios
  */
-constructor (data = {})
+constructor (data = {}, axios = null)
 
 /**
  * Submit the from via a POST|PATCH|PUT|DELETE|GET request.
