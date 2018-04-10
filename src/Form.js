@@ -193,7 +193,11 @@ class Form {
     }
 
     if (data.error && data.error.message) {
-      return { ...data.error.message }
+      if (typeof data.error.message === 'object') {
+        return { ...data.error.message }
+      } else {
+        return { error: data.error.message }
+      }
     }
 
     return { ...data }
