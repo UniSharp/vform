@@ -1,6 +1,6 @@
 {
   "name": "@unisharp/vform",
-  "version": "0.8.8",
+  "version": "0.8.9",
   "description": "A simple way to handle Laravel back-end validation in Vue.",
   "main": "dist/vform.js",
   "scripts": {
